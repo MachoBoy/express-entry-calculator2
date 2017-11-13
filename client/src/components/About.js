@@ -82,7 +82,7 @@ const About = () => {
               </tbody>
             </table>
             <div className="ui inverted segment">
-              Developed by Machoboy 2017 &nbsp;&nbsp;
+              Developed by Machoboy 2017 &nbsp;&nbsp;&nbsp;
               <i className="large link mail outline icon" />
               <i className="large link github icon" />
             </div>
