@@ -55,7 +55,7 @@ const About = () => {
           </ul>
           <div className="summaryTable">
             <h3> Core Points + Additional Points = Your Total Score</h3>
-            <table class="ui striped table">
+            <table className="ui striped table">
               <thead>
                 <tr className="center aligned">
                   <th>Single candidates </th>

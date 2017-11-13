@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import About from './About';
 import Menu from './Menu';
+import PartA from './PartA';
 
 class App extends Component {
   render() {
     const Login = () => <div>Login</div>;
-    const PartA = () => <div>PartA</div>;
     const PartB = () => <div>PartB</div>;
     const PartC = () => <div>PartC</div>;
     const PartD = () => <div>PartD</div>;

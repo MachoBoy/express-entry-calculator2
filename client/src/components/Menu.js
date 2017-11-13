@@ -1,7 +1,10 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 const MENU_TITLE = [
-  { to: '/about', title: 'Express Entry' },
+  { to: '/login', title: 'Login' },
+  { to: '/about', title: 'About' },
   { to: '/core', title: 'Core / human capital factors' },
   { to: '/spouse', title: 'Spouse or common-law partner factors' },
   { to: '/skill', title: 'Skill transferability factors' },
@@ -9,18 +12,27 @@ const MENU_TITLE = [
 ];
 
 class Menu extends Component {
+  renderMenu() {
+    return _.map(MENU_TITLE, ({ to, title }) => {
+      return (
+        <Link className="item" to={to}>
+          {title}
+        </Link>
+      );
+    });
+  }
+
   render() {
     return (
       <div
         className="ui inverted vertical pointing menu"
         style={styles.MenuStyle}
       >
-        <a class="item">Login</a>
-        <a class="item">About</a>
-        <a class="item">Core/human capital factors</a>
-        <a class="item">Spouse or common law partner factors</a>
-        <a class="item">Skill transferability factors</a>
-        <a class="item">Additional Points</a>
+        <Link to="/">
+          <h3 className="green">Express Entry Calculator</h3>
+          <i className="huge calculator icon green" />
+        </Link>
+        {this.renderMenu()}
       </div>
     );
   }
