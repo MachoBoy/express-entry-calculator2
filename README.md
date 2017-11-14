@@ -7,4 +7,6 @@
 * User Friendly environment
 
 
-* Link to Original: [GitHub](https://github.com/MachoBoy/express-entry-calculator)
+* To Original: [Express-Entry-Calculator](https://github.com/MachoBoy/express-entry-calculator)
+
+* DEMO: https://fierce-badlands-70225.herokuapp.com/
