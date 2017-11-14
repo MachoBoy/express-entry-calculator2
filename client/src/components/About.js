@@ -18,8 +18,10 @@ const About = () => (
         </p>
 
         <p>
-          For more Information, please visit here
-          http://www.cic.gc.ca/english/express-entry/grid-crs.asp
+          For more Information, please visit&nbsp;
+          <a href="http://www.cic.gc.ca/english/express-entry/grid-crs.asp">
+            here
+          </a>
         </p>
       </Segment>
       <Segment color="orange">
@@ -31,7 +33,7 @@ const About = () => (
         <p>
           This tool will help you calculate your Comprehensive Ranking System
           (CRS) score based on the answers you provide. The CRS is a
-          points-based system.{' '}
+          points-based system.
         </p>
         <p>There are 4 parts of section</p>
         <ul>
@@ -67,51 +69,42 @@ const About = () => (
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell textAlign="center">
-                {' '}
-                Single candidates{' '}
+                Single candidates
               </Table.HeaderCell>
               <Table.HeaderCell textAlign="center">
-                {' '}
-                With a spouse or common-law partner{' '}
+                With a spouse or common-law partner
               </Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
             <Table.Row>
               <Table.Cell textAlign="center">
-                {' '}
-                1. Skills and experience factors (maximum 500){' '}
+                1. Skills and experience factors (maximum 500)
               </Table.Cell>
               <Table.Cell textAlign="center">
-                {' '}
-                1. Skills and experience factors (maximum 460){' '}
+                1. Skills and experience factors (maximum 460)
               </Table.Cell>
             </Table.Row>
             <Table.Row>
               <Table.Cell textAlign="center"> N/A </Table.Cell>
               <Table.Cell textAlign="center">
-                {' '}
-                2. Spouse or common-law partner factors (maximum 40){' '}
+                2. Spouse or common-law partner factors (maximum 40)
               </Table.Cell>
             </Table.Row>
             <Table.Row>
               <Table.Cell textAlign="center">
-                {' '}
-                3. Skill transferability factors (maximum 100){' '}
+                3. Skill transferability factors (maximum 100)
               </Table.Cell>
               <Table.Cell textAlign="center">
-                {' '}
-                3. Skill transferability factors (maximum 100){' '}
+                3. Skill transferability factors (maximum 100)
               </Table.Cell>
             </Table.Row>
             <Table.Row>
               <Table.Cell textAlign="center">
-                {' '}
-                4. points (maximum 600){' '}
+                4. points (maximum 600)
               </Table.Cell>
               <Table.Cell textAlign="center">
-                {' '}
-                4. points (maximum 600){' '}
+                4. points (maximum 600)
               </Table.Cell>
             </Table.Row>
           </Table.Body>
@@ -128,6 +121,7 @@ const About = () => (
 
 const styles = {
   container: {
+    position: 'absolute',
     top: '0',
     bottom: '0',
     marginLeft: '270px'

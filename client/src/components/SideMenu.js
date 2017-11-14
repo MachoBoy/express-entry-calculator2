@@ -18,14 +18,15 @@ class SideMenu extends Component {
     this.state = {
       activeIndex: 0
     };
+    this.onMenuClick = this.onMenuClick.bind(this);
+    this.renderMenu = this.renderMenu.bind(this);
   }
   onMenuClick(index) {
     this.setState({ activeIndex: index });
   }
 
   renderMenu() {
-    return _.map(MENU_TITLE, ({ to, title, index }) => {
-      console.log(index);
+    return _.map(MENU_TITLE, ({ to, title }, index) => {
       return (
         <Menu.Item
           key={title}
@@ -57,6 +58,7 @@ class SideMenu extends Component {
 const styles = {
   MenuStyle: {
     position: 'absolute',
+    height: '150%',
     top: '0',
     bottom: '0',
     width: '270px'
