@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import About from './About';
-import Menu from './Menu';
+import Menu from './SideMenu';
 import PartA from './PartA';
 
 class App extends Component {
