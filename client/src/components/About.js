@@ -121,7 +121,6 @@ const About = () => (
 
 const styles = {
   container: {
-    position: 'absolute',
     top: '0',
     bottom: '0',
     marginLeft: '270px'
