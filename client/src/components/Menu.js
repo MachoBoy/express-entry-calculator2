@@ -15,7 +15,7 @@ class Menu extends Component {
   renderMenu() {
     return _.map(MENU_TITLE, ({ to, title }) => {
       return (
-        <Link className="item" to={to}>
+        <Link key={title} className="item" to={to}>
           {title}
         </Link>
       );
