@@ -1,20 +1,50 @@
 import React, { Component } from 'react';
-import {
-  Button,
-  Form,
-  Header,
-  Image,
-  Message,
-  Segment
-} from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { Button, Form, Header, Message, Segment } from 'semantic-ui-react';
+import { loginUser, getEmail, getPassword } from '../actions';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
   componentWillMount() {
     document.body.style.background = '#ffc966';
   }
+
   componentWillUnmount() {
     document.body.style.background = null;
   }
+
+  onEmailChange(event, data) {
+    event.preventDefault();
+    this.props.getEmail(data.value);
+  }
+
+  onPasswordChange(event, data) {
+    event.preventDefault();
+    this.props.getPassword(data.value);
+  }
+
+  onSubmit() {
+    const { email, password } = this.props;
+    this.props.loginUser({ email, password });
+  }
+
+  // renderButton() {
+  //   if (this.props.loading) {
+  //     return (
+  //       <Button loading primary>
+  //         loading
+  //       </Button>
+  //     );
+  //   }
+  //   return (
+  //     <Button color="green" fluid size="large" onClick={this.onSubmit}>
+  //       Login
+  //     </Button>
+  //   );
+  // }
 
   render() {
     return (
@@ -22,13 +52,14 @@ class Login extends Component {
         <Form size="large">
           <Segment stacked>
             <Header as="h2" color="green" textAlign="center">
-              Log-in to your account
+              Log in to your account
             </Header>
             <Form.Input
               fluid
               icon="user"
               iconPosition="left"
               placeholder="E-mail address"
+              onChange={this.onEmailChange.bind(this)}
             />
             <Form.Input
               fluid
@@ -36,16 +67,22 @@ class Login extends Component {
               iconPosition="left"
               placeholder="Password"
               type="password"
+              onChange={this.onPasswordChange.bind(this)}
             />
-
-            <Button color="green" fluid size="large">
-              Login
-            </Button>
+            {this.props.loading ? (
+              <Button loading primary fluid size="large">
+                loading
+              </Button>
+            ) : (
+              <Button color="green" fluid size="large" onClick={this.onSubmit}>
+                Login
+              </Button>
+            )}
           </Segment>
         </Form>
-        <Message>
-          New to us? <a href="#">Sign Up</a>
-        </Message>
+        <div className="Message">
+          <Message> Don't have account with us? </Message>
+        </div>
       </div>
     );
   }
@@ -59,7 +96,20 @@ const styles = {
     width: '500px',
     marginLeft: '285px',
     marginTop: '45px'
+  },
+  messageStyle: {
+    position: 'relative',
+    left: 0
   }
 };
 
-export default Login;
+const mapStateToProps = ({ auth }) => {
+  const { email, password, error, loading } = auth;
+  return { email, password, error, loading };
+};
+
+export default connect(mapStateToProps, {
+  loginUser,
+  getEmail,
+  getPassword
+})(Login);

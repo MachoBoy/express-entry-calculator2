@@ -16,13 +16,13 @@ class TableForm extends Component {
         <Table.Cell content={text || 'N/A'} key={shortid.generate()} />,
         <Table.Cell
           key={shortid.generate()}
-          content={value || 'N/A'}
+          content={value || null}
           textAlign={'center'}
           selectable
         />,
         <Table.Cell
           key={shortid.generate()}
-          content={value2 || 'N/A'}
+          content={value2 || null}
           textAlign={'center'}
           selectable
         />

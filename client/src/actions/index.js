@@ -1,3 +1,1 @@
-export const selectCell = point => {
-  return { type: SELECT, payload: point };
-};
+export * from './authAction';
