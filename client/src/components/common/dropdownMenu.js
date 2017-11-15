@@ -1,13 +1,14 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
+import shortid from 'shortid';
 
-const dropdownMenu = ({ searchInput, selection, options, placeholder }) => {
+const dropdownMenu = ({ searchInput, options, placeholder }) => {
   return (
     <div>
       <Dropdown
         fluid
+        selection
         searchInput={searchInput}
-        selection={selection}
         options={options}
         placeholder={placeholder}
       />

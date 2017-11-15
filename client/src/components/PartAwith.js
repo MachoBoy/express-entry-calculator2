@@ -51,7 +51,6 @@ class PartAwith extends Component {
           <h1>Age </h1>
           <DropdownMenu
             serchInput={{ type: 'number' }}
-            selection={true}
             options={PartASource.WITHSPOUSE_AGE_DATA}
             placeholder="Select Age"
           />
@@ -59,18 +58,34 @@ class PartAwith extends Component {
 
         <Segment inverted color="black">
           <h1>Level of Education</h1>
+          <TableForm
+            headers={PartASource.WITHSPOUSE_EDU_HEADER}
+            rows={PartASource.WITHSPOUSE_EDU_DATA}
+          />
         </Segment>
 
         <Segment inverted color="black">
           <h1>Official languages proficiency - first official language</h1>
+          <TableForm
+            headers={PartASource.WITHSPOUSE_LANG_HEADER}
+            rows={PartASource.WITHSPOUSE_LANG_FIRST_DATA}
+          />
         </Segment>
 
         <Segment inverted color="black">
           <h1>Official languages proficiency - second official language</h1>
+          <TableForm
+            headers={PartASource.WITHSPOUSE_LANG_HEADER}
+            rows={PartASource.WITHSPOUSE_LANG_SECOND_DATA}
+          />
         </Segment>
 
         <Segment inverted color="black">
           <h1>Canadian work experience</h1>
+          <TableForm
+            headers={PartASource.WITHOUTSPOUSE_WORK_HEADER}
+            rows={PartASource.WITHSPOUSE_WORK_DATA}
+          />
         </Segment>
       </div>
     );
