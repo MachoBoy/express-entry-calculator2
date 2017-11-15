@@ -92,11 +92,4 @@ class PartAwith extends Component {
   }
 }
 
-const styles = {
-  containerStyle: {
-    position: 'absolute',
-    marginLeft: '270px'
-  }
-};
-
 export default PartAwith;

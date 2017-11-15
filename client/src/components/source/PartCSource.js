@@ -31,17 +31,17 @@ const PartCSource = {
 
   EDU_DATA: [
     {
-      factor: 'Secondary school (high school) credential or less',
-      value: 0,
-      value2: 0
+      text: 'Secondary school (high school) credential or less',
+      value: '0',
+      value2: '0'
     },
     {
-      factor: 'Post-secondary program credential of one year or longer',
+      text: 'Post-secondary program credential of one year or longer',
       value: 13,
       value2: 25
     },
     {
-      factor:
+      text:
         'Two or more post-secondary program credentials AND at least one of these credentials was issued on completion of a post-secondary program of three years or longer',
       value: 25,
       value2: 50
@@ -49,21 +49,21 @@ const PartCSource = {
   ],
 
   FWE_DATA: [
-    { factor: 'No foreign work experience', value: 0, value2: 0 },
+    { text: 'No foreign work experience', value: '0', value2: '0' },
     {
-      factor: '1 or 2 years of foreign work experience',
+      text: '1 or 2 years of foreign work experience',
       value: 13,
       value2: 25
     },
     {
-      factor: '3 years or more of foreign work experience',
+      text: '3 years or more of foreign work experience',
       value: 25,
       value2: 50
     }
   ],
 
   COQ_DATA: [
-    { factor: 'With a certificate of qualification', value: 25, value2: 50 }
+    { text: 'With a certificate of qualification', value: 25, value2: 50 }
   ]
 };
 export default PartCSource;

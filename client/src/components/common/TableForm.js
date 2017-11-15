@@ -10,13 +10,19 @@ class TableForm extends Component {
     };
   }
   renderTable = (headers, rows) => {
-    const customRenderBodyRow = ({ text, value }, index) => ({
+    const customRenderBodyRow = ({ text, value, value2 }, index) => ({
       key: shortid.generate(),
       cells: [
         <Table.Cell content={text || 'N/A'} key={shortid.generate()} />,
         <Table.Cell
           key={shortid.generate()}
-          content={value}
+          content={value || 'N/A'}
+          textAlign={'center'}
+          selectable
+        />,
+        <Table.Cell
+          key={shortid.generate()}
+          content={value2 || 'N/A'}
           textAlign={'center'}
           selectable
         />

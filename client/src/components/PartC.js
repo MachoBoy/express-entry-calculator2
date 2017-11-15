@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Segment, Table } from 'semantic-ui-react';
+import TableForm from './common/TableForm';
+import PartCSource from './source/PartCSource';
 
 class PartC extends Component {
   render() {
@@ -89,18 +91,39 @@ class PartC extends Component {
 
         <Segment inverted color="black">
           <h1>Education</h1>
+          <TableForm
+            headers={PartCSource.EDU_HEADER_1}
+            rows={PartCSource.EDU_DATA}
+          />
+          <TableForm
+            headers={PartCSource.EDU_HEADER_1}
+            rows={PartCSource.EDU_DATA}
+          />
         </Segment>
 
         <Segment inverted color="black">
           <h1>
             Foreign work experience – With good official language proficiency
           </h1>
+          <TableForm
+            headers={PartCSource.FWE_HEADER_1}
+            rows={PartCSource.FWE_DATA}
+          />
         </Segment>
 
         <Segment inverted color="black">
           <h1>Foreign work experience – With Canadian work experience</h1>
+          <TableForm
+            headers={PartCSource.FWE_HEADER_2}
+            rows={PartCSource.EDU_DATA}
+          />
         </Segment>
-        <Segment inverted color="black" />
+        <Segment inverted color="black">
+          <TableForm
+            headers={PartCSource.COQ_HEADER}
+            rows={PartCSource.COQ_DATA}
+          />
+        </Segment>
       </div>
     );
   }
