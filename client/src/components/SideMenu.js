@@ -57,7 +57,7 @@ class SideMenu extends Component {
 
 const styles = {
   MenuStyle: {
-    position: 'absolute',
+    position: 'fixed',
     top: '0',
     bottom: '0',
     width: '270px'
