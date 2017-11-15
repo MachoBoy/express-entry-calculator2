@@ -3,13 +3,13 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import About from './About';
 import Menu from './SideMenu';
 import PartA from './PartA';
+import PartB from './PartB';
+import PartC from './PartC';
+import PartD from './PartD';
 
 class App extends Component {
   render() {
     const Login = () => <div>Login</div>;
-    const PartB = () => <div>PartB</div>;
-    const PartC = () => <div>PartC</div>;
-    const PartD = () => <div>PartD</div>;
     return (
       <div>
         <BrowserRouter>
@@ -20,7 +20,7 @@ class App extends Component {
             <Route exact path="/core" component={PartA} />
             <Route exact path="/spouse" component={PartB} />
             <Route exact path="/skill" component={PartC} />
-            <Route exact path="/addtional" component={PartD} />
+            <Route exact path="/additional" component={PartD} />
           </div>
         </BrowserRouter>
       </div>

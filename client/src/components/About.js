@@ -123,7 +123,8 @@ const styles = {
   container: {
     top: '0',
     bottom: '0',
-    marginLeft: '270px'
+    marginLeft: '285px',
+    marginTop: '45px'
   }
 };
 

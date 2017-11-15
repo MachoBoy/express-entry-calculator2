@@ -1,47 +1,77 @@
 import React, { Component } from 'react';
-import { Dropdown } from 'semantic-ui-react';
-
-const WITHSPOUSE_AGE_DATA = [
-  { text: '17 years of age or less', value: 0 },
-  { text: '18 years of age', value: 90 },
-  { text: '19 years of age', value: 95 },
-  { text: '20 to 29 years of age', value: 100 },
-  { text: '30 years of age', value: 95 },
-  { text: '31 years of age', value: 90 },
-  { text: '32 years of age', value: 85 },
-  { text: '33 years of age', value: 80 },
-  { text: '34 years of age', value: 75 },
-  { text: '35 years of age', value: 70 },
-  { text: '36 years of age', value: 65 },
-  { text: '37 years of age', value: 60 },
-  { text: '38 years of age', value: 55 },
-  { text: '39 years of age', value: 50 },
-  { text: '40 years of age', value: 45 },
-  { text: '41 years of age', value: 35 },
-  { text: '42 years of age', value: 25 },
-  { text: '43 years of age', value: 15 },
-  { text: '44 years of age', value: 5 },
-  { text: '45 years of age or more', value: 0 }
-];
+import { Segment, Table } from 'semantic-ui-react';
+import DropdownMenu from './common/dropdownMenu';
+import TableForm from './common/TableForm';
+import PartASource from './source/PartASource';
 
 class PartAwith extends Component {
-  renderDropdown() {
-    return (
-      <div>
-        <Dropdown
-          searchInput={{ type: 'number' }}
-          selection
-          options={WITHSPOUSE_AGE_DATA}
-          placeholder="Select Age"
-        />
-      </div>
-    );
-  }
-
   render() {
     return (
-      <div className="partA" style={styles.containerStyle}>
-        {this.renderDropdown()}
+      <div className="partA">
+        <Segment inverted color="orange">
+          <h1>A. Core/human capital factors </h1>
+          <Table
+            className="summaryTable"
+            size="large"
+            padded
+            striped
+            celled
+            verticalAlign={'middle'}
+          >
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell> Factor </Table.HeaderCell>
+                <Table.HeaderCell textAlign="center">
+                  With a spouse or common-law partner
+                </Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell> Age </Table.Cell>
+                <Table.Cell textAlign="center"> 100 </Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell> Level of education </Table.Cell>
+                <Table.Cell textAlign="center"> 140 </Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell> Official languages proficiency </Table.Cell>
+                <Table.Cell textAlign="center"> 150 </Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell> Canadian work experience </Table.Cell>
+                <Table.Cell textAlign="center"> 70 </Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
+        </Segment>
+
+        <Segment inverted color="black">
+          <h1>Age </h1>
+          <DropdownMenu
+            serchInput={{ type: 'number' }}
+            selection={true}
+            options={PartASource.WITHSPOUSE_AGE_DATA}
+            placeholder="Select Age"
+          />
+        </Segment>
+
+        <Segment inverted color="black">
+          <h1>Level of Education</h1>
+        </Segment>
+
+        <Segment inverted color="black">
+          <h1>Official languages proficiency - first official language</h1>
+        </Segment>
+
+        <Segment inverted color="black">
+          <h1>Official languages proficiency - second official language</h1>
+        </Segment>
+
+        <Segment inverted color="black">
+          <h1>Canadian work experience</h1>
+        </Segment>
       </div>
     );
   }
