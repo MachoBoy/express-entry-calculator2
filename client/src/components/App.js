@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import Login from './Login';
 import About from './About';
 import Menu from './SideMenu';
 import PartA from './PartA';
@@ -9,7 +10,6 @@ import PartD from './PartD';
 
 class App extends Component {
   render() {
-    const Login = () => <div>Login</div>;
     return (
       <div>
         <BrowserRouter>

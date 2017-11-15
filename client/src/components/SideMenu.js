@@ -4,7 +4,7 @@ import { Menu, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const MENU_TITLE = [
-  { to: '/login', title: 'Login' },
+  { to: '/', title: 'Login' },
   { to: '/about', title: 'About' },
   { to: '/core', title: 'Core / human capital factors' },
   { to: '/spouse', title: 'Spouse or common-law partner factors' },
@@ -58,7 +58,6 @@ class SideMenu extends Component {
 const styles = {
   MenuStyle: {
     position: 'absolute',
-    height: '150%',
     top: '0',
     bottom: '0',
     width: '270px'
