@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Form, Header, Message, Segment } from 'semantic-ui-react';
+import {
+  Button,
+  Form,
+  Header,
+  Message,
+  Segment,
+  Icon
+} from 'semantic-ui-react';
 import { loginUser, getEmail, getPassword } from '../actions';
 
 class Login extends Component {
@@ -30,21 +37,6 @@ class Login extends Component {
     const { email, password } = this.props;
     this.props.loginUser({ email, password });
   }
-
-  // renderButton() {
-  //   if (this.props.loading) {
-  //     return (
-  //       <Button loading primary>
-  //         loading
-  //       </Button>
-  //     );
-  //   }
-  //   return (
-  //     <Button color="green" fluid size="large" onClick={this.onSubmit}>
-  //       Login
-  //     </Button>
-  //   );
-  // }
 
   render() {
     return (
@@ -81,7 +73,19 @@ class Login extends Component {
           </Segment>
         </Form>
         <div className="Message">
-          <Message> Don't have account with us? </Message>
+          <Message color="teal" style={styles.messageStyle}>
+            <div className="welcomescript" style={styles.scriptStyle}>
+              <Icon
+                style={styles.iconStyle}
+                name="id card"
+                size="massive"
+                color="green"
+              />
+              <h2>Don't have account with us?</h2>
+              <h3>Please provide email and password</h3>
+              <h3>we will handle the rest</h3>
+            </div>
+          </Message>
         </div>
       </div>
     );
@@ -90,7 +94,7 @@ class Login extends Component {
 
 const styles = {
   containerStyle: {
-    position: 'relative',
+    position: 'fixed',
     display: 'block',
     margin: 'auto',
     width: '500px',
@@ -98,8 +102,21 @@ const styles = {
     marginTop: '45px'
   },
   messageStyle: {
+    position: 'fixed',
+    display: 'flex',
+    height: '100%',
+    right: '0',
+    bottom: '0'
+  },
+  iconStyle: {
+    display: 'block',
+    right: '0',
+    left: '0'
+  },
+  scriptStyle: {
     position: 'relative',
-    left: 0
+    display: 'block',
+    margin: 'auto'
   }
 };
 
