@@ -68,7 +68,8 @@ const styles = {
   containerStyle: {
     position: 'relative',
     marginLeft: '285px',
-    marginTop: '45px'
+    marginTop: '45px',
+    marginRight: '35px'
   }
 };
 

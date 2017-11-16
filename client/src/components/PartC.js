@@ -133,7 +133,8 @@ const styles = {
   containerStyle: {
     position: 'absolute',
     marginLeft: '285px',
-    marginTop: '45px'
+    marginTop: '45px',
+    marginRight: '35px'
   }
 };
 
