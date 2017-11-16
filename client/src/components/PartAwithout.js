@@ -50,9 +50,9 @@ class PartAwithout extends Component {
         <Segment inverted color="black">
           <h1>Age </h1>
           <DropdownMenu
-            serchInput={{ type: 'number' }}
             options={PartASource.WITHOUTSPOUSE_AGE_DATA}
             placeholder="Select Age"
+            value={PartASource.WITHOUTSPOUSE_AGE_DATA.value}
           />
         </Segment>
 

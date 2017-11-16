@@ -1,15 +1,15 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 
-const dropdownMenu = ({ searchInput, options, placeholder }) => {
+const dropdownMenu = ({ options, placeholder, value }) => {
   return (
     <div>
       <Dropdown
         fluid
         selection
-        searchInput={searchInput}
         options={options}
         placeholder={placeholder}
+        value={value}
       />
     </div>
   );

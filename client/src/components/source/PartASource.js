@@ -37,12 +37,12 @@ const PartASource = {
   ],
 
   WITHSPOUSE_AGE_DATA: [
-    { key: 'a', text: '17 years of age or less', value: 0 },
+    { key: 'a', text: '17 years of age or less', value: '0' },
     { key: 'b', text: '18 years of age', value: 90 },
     { key: 'c', text: '19 years of age', value: 95 },
     { key: 'd', text: '20 to 29 years of age', value: 100 },
-    { key: 'f', text: '30 years of age', value: 95 },
-    { key: 'g', text: '31 years of age', value: 90 },
+    { key: 'f', text: '30 years of age', value: '95' },
+    { key: 'g', text: '31 years of age', value: '90' },
     { key: 'h', text: '32 years of age', value: 85 },
     { key: 'i', text: '33 years of age', value: 80 },
     { key: 'j', text: '34 years of age', value: 75 },
@@ -59,12 +59,12 @@ const PartASource = {
     { key: 'u', text: '45 years of age or more', value: 0 }
   ],
   WITHOUTSPOUSE_AGE_DATA: [
-    { key: 'a', text: '17 years of age or less', value: 0 },
+    { key: 'a', text: '17 years of age or less', value: '0' },
     { key: 'b', text: '18 years of age', value: 99 },
     { key: 'c', text: '19 years of age', value: 105 },
     { key: 'd', text: '20 to 29 years of age', value: 110 },
-    { key: 'e', text: '30 years of age', value: 105 },
-    { key: 'f', text: '31 years of age', value: 99 },
+    { key: 'e', text: '30 years of age', value: '105' },
+    { key: 'f', text: '31 years of age', value: '99' },
     { key: 'g', text: '32 years of age', value: 94 },
     { key: 'h', text: '33 years of age', value: 88 },
     { key: 'i', text: '34 years of age', value: 83 },
@@ -144,7 +144,7 @@ const PartASource = {
   ],
 
   WITHSPOUSE_LANG_FIRST_DATA: [
-    { text: 'Less than CLB 4', value: 0 },
+    { text: 'Less than CLB 4', value: '0' },
     { text: 'Less than CLB 4 or 5', value: 6 },
     { text: 'Less than CLB 6', value: 8 },
     { text: 'Less than CLB 7', value: 16 },
@@ -154,7 +154,7 @@ const PartASource = {
   ],
 
   WITHOUTSPOUSE_LANG_FIRST_DATA: [
-    { text: 'Less than CLB 4', value: 0 },
+    { text: 'Less than CLB 4', value: '0' },
     { text: 'Less than CLB 4 or 5', value: 6 },
     { text: 'Less than CLB 6', value: 8 },
     { text: 'Less than CLB 7', value: 16 },
@@ -164,21 +164,21 @@ const PartASource = {
   ],
 
   WITHSPOUSE_LANG_SECOND_DATA: [
-    { text: 'Less than CLB 4', value: 0 },
+    { text: 'Less than CLB 4', value: '0' },
     { text: 'Less than CLB 5 or 6', value: 1 },
     { text: 'Less than CLB 7 or 8', value: 3 },
     { text: 'Less than CLB 9 or more', value: 6 }
   ],
 
   WITHOUTSPOUSE_LANG_SECOND_DATA: [
-    { text: 'Less than CLB 4', value: 0 },
+    { text: 'Less than CLB 4', value: '0' },
     { text: 'Less than CLB 5 or 6', value: 1 },
     { text: 'Less than CLB 7 or 8', value: 3 },
     { text: 'Less than CLB 9 or more', value: 6 }
   ],
 
   WITHSPOUSE_WORK_DATA: [
-    { text: 'None or less than a year', value: 0 },
+    { text: 'None or less than a year', value: '0' },
     { text: '1 year', value: 35 },
     { text: '2 year', value: 46 },
     { text: '3 year', value: 56 },
@@ -187,7 +187,7 @@ const PartASource = {
   ],
 
   WITHOUTSPOUSE_WORK_DATA: [
-    { text: 'None or less than a year', value: 0 },
+    { text: 'None or less than a year', value: '0' },
     { text: '1 year', value: 40 },
     { text: '2 year', value: 53 },
     { text: '3 year', value: 64 },
