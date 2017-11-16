@@ -1,7 +1,9 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { Menu, Icon } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { Menu, Icon, Loader, Dimmer } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import { logoutUser } from '../actions/authAction';
 
 const MENU_TITLE = [
   { to: '/', title: 'Login' },
@@ -12,6 +14,8 @@ const MENU_TITLE = [
   { to: '/additional', title: 'Additional points' }
 ];
 
+const LOGOUT = { to: '', title: 'Logout', lg: 'lg' };
+
 class SideMenu extends Component {
   constructor(props) {
     super(props);
@@ -21,11 +25,39 @@ class SideMenu extends Component {
     this.onMenuClick = this.onMenuClick.bind(this);
     this.renderMenu = this.renderMenu.bind(this);
   }
-  onMenuClick(index) {
+
+  onMenuClick(index, trigger) {
     this.setState({ activeIndex: index });
+    if (trigger) {
+      this.props.logout();
+    }
   }
 
   renderMenu() {
+    const { user, loading } = this.props;
+    if (user) {
+      const removeLogin = _.drop(MENU_TITLE, 1);
+      const logoutMenu = _.concat(removeLogin, LOGOUT);
+      return _.map(logoutMenu, ({ to, title, lg }, index) => {
+        return (
+          <Menu.Item
+            key={title}
+            active={this.state.activeIndex === index}
+            as={Link}
+            to={to}
+            children={title}
+            onClick={() => this.onMenuClick(index, lg)}
+          />
+        );
+      });
+    }
+    if (loading === true) {
+      return (
+        <Dimmer active inverted>
+          <Loader>Loading</Loader>
+        </Dimmer>
+      );
+    }
     return _.map(MENU_TITLE, ({ to, title }, index) => {
       return (
         <Menu.Item
@@ -48,6 +80,8 @@ class SideMenu extends Component {
             Express Entry Calculator
             <Icon name="calculator" size={'huge'} color={'green'} />
           </Menu.Item>
+          <Menu.Item key="123242" />
+
           {this.renderMenu()}
         </Menu>
       </div>
@@ -64,4 +98,9 @@ const styles = {
   }
 };
 
-export default SideMenu;
+const mapStateToProps = ({ auth }) => {
+  const { user, loading } = auth;
+  return { user, loading };
+};
+
+export default connect(mapStateToProps, { logoutUser })(SideMenu);

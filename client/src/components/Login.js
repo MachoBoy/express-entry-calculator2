@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import {
   Button,
   Form,
   Header,
   Message,
   Segment,
-  Icon
+  Icon,
+  Dimmer,
+  Loader
 } from 'semantic-ui-react';
 import { loginUser, getEmail, getPassword } from '../actions';
 
@@ -39,6 +42,16 @@ class Login extends Component {
   }
 
   render() {
+    if (this.props.user) {
+      return (
+        <div>
+          <Dimmer active>
+            <Loader />
+          </Dimmer>
+          <Redirect to="/about" />;
+        </div>
+      );
+    }
     return (
       <div className="login" style={styles.containerStyle}>
         <Form size="large">
@@ -121,8 +134,8 @@ const styles = {
 };
 
 const mapStateToProps = ({ auth }) => {
-  const { email, password, error, loading } = auth;
-  return { email, password, error, loading };
+  const { email, password, error, loading, user } = auth;
+  return { email, password, error, loading, user };
 };
 
 export default connect(mapStateToProps, {

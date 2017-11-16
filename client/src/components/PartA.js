@@ -19,7 +19,7 @@ class PartA extends Component {
       {
         menuItem: 'Without a spouse or common-law partner',
         render: () => (
-          <Tab.Pane>
+          <Tab.Pane attached={false}>
             <PartAwithout />
           </Tab.Pane>
         )
@@ -27,7 +27,7 @@ class PartA extends Component {
       {
         menuItem: 'With a spouse or common-law partner',
         render: () => (
-          <Tab.Pane>
+          <Tab.Pane attached={false}>
             <PartAwith />
           </Tab.Pane>
         )
@@ -36,6 +36,7 @@ class PartA extends Component {
     return (
       <div style={styles.containerStyle}>
         <Tab
+          menu={{ color: 'green', attached: false }}
           panes={PANE}
           activeIndex={this.state.activeIndex}
           renderActiveOnly={true}
