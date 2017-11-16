@@ -56,3 +56,9 @@ const loginUserFail = dispatch => {
 const loginUserSuccess = (dispatch, user) => {
   dispatch({ type: LOGIN_USER_SUCCESS, payload: user });
 };
+
+export const logoutUser = () => {
+  return dispatch => {
+    auth.signOut();
+  };
+};
