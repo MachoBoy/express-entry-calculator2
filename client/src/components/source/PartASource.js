@@ -82,7 +82,7 @@ const PartASource = {
   ],
 
   WITHOUTSPOUSE_EDU_DATA: [
-    { text: 'Less than secondary school (high school)', value: 0 },
+    { text: 'Less than secondary school (high school)', value: '0' },
     { text: 'Secondary diploma (high school graduation)', value: 30 },
     {
       text:
@@ -113,7 +113,7 @@ const PartASource = {
   ],
 
   WITHSPOUSE_EDU_DATA: [
-    { text: 'Less than secondary school (high school)', value: 0 },
+    { text: 'Less than secondary school (high school)', value: '0' },
     { text: 'Secondary diploma (high school graduation)', value: 28 },
     {
       text:

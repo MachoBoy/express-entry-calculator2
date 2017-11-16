@@ -66,7 +66,7 @@ class PartB extends Component {
 }
 const styles = {
   containerStyle: {
-    position: 'absolute',
+    position: 'relative',
     marginLeft: '285px',
     marginTop: '45px'
   }
