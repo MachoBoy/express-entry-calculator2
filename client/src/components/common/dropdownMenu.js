@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 
-const dropdownMenu = ({ options, placeholder, value }) => {
+const dropdownMenu = ({ options, placeholder, value, onClick }) => {
   return (
     <div>
       <Dropdown
@@ -10,6 +10,7 @@ const dropdownMenu = ({ options, placeholder, value }) => {
         options={options}
         placeholder={placeholder}
         value={value}
+        onClick={onClick}
       />
     </div>
   );

@@ -117,7 +117,8 @@ const styles = {
     top: '0',
     bottom: '0',
     marginLeft: '285px',
-    marginTop: '45px'
+    marginTop: '45px',
+    marginRight: '35px'
   }
 };
 

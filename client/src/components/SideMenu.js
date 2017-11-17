@@ -73,6 +73,8 @@ class SideMenu extends Component {
   }
 
   render() {
+    console.log(this.props);
+
     return (
       <div className="menu">
         <Menu pointing vertical inverted style={styles.MenuStyle}>
@@ -98,9 +100,35 @@ const styles = {
   }
 };
 
-const mapStateToProps = ({ auth }) => {
-  const { user, loading } = auth;
-  return { user, loading };
+const mapStateToProps = state => {
+  return {
+    user: state.auth.user,
+    loading: state.auth.loading,
+    // core withSpouse states
+    withSpouseAgePoint: state.withspouseAge,
+    withSpouseEduPoint: state.withspouseEdu,
+    withSpouseLangPoint: state.withspouseLangFirst,
+    withSpouseLang2Point: state.withspouseLangSecond,
+    withSpouseWorkPoint: state.withspouseWork,
+    // core withoutSpouse
+    withoutSpouseAgePoint: state.withoutspouseAge,
+    withoutSpouseEduPoint: state.withoutspouseEdu,
+    withoutSpouseLangPoint: state.withoutspouseLangFirst,
+    withoutSpouseLang2Point: state.withoutspouseLangSecond,
+    withoutSpouseWorkPoint: state.withoutspouseWork,
+    // Spouse factor
+    BwithSpouseEduPoint: state.BwithspouseEdu,
+    BwithSpouseLangPoint: state.BwithspouseLang,
+    BwithSpouseWorkPoint: state.BwithspouseWork,
+    // skill transferability factors
+    CEdu_1Point: state.CEdu_1,
+    CEdu_2Point: state.CEdu_2,
+    CForeignLang_1Point: state.CForeignLang_1,
+    CForeignLang_2Point: state.CForeignLang_2,
+    certificatePoint: state.certificate,
+    // Additional
+    additionalPoint: state.additional
+  };
 };
 
 export default connect(mapStateToProps, { logoutUser })(SideMenu);

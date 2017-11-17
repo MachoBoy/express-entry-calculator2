@@ -54,6 +54,12 @@ class Login extends Component {
     }
     return (
       <div className="login" style={styles.containerStyle}>
+        <div className="authError">
+          <Message negative>
+            <Icon name="warning circle" />
+            {this.props.error}
+          </Message>
+        </div>
         <Form size="large">
           <Segment stacked>
             <Header as="h2" color="green" textAlign="center">
@@ -130,7 +136,8 @@ const styles = {
     position: 'relative',
     display: 'block',
     margin: 'auto'
-  }
+  },
+  errorMessageStyle: {}
 };
 
 const mapStateToProps = ({ auth }) => {

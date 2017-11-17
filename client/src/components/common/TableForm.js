@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import { Table } from 'semantic-ui-react';
 import shortid from 'shortid';
@@ -63,12 +64,19 @@ class TableForm extends Component {
     });
     return (
       <Table
+        key={shortid.generate()}
         size="large"
         padded
         striped
         celled
         verticalAlign="middle"
-        headerRow={headers}
+        headerRow={_.map(headers, header => (
+          <Table.HeaderCell
+            key={shortid.generate()}
+            children={header}
+            textAlign="center"
+          />
+        ))}
         renderBodyRow={customRenderBodyRow}
         tableData={rows}
       />
@@ -82,8 +90,8 @@ class TableForm extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSelection: point => {
-      dispatch(select(point));
+    onSelection: value => {
+      dispatch(select(value));
     }
   };
 };
