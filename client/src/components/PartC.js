@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { SubspaceProvider } from 'react-redux-subspace';
 import { Segment, Table } from 'semantic-ui-react';
 import TableForm from './common/TableForm';
 import PartCSource from './source/PartCSource';
@@ -91,38 +92,59 @@ class PartC extends Component {
 
         <Segment inverted color="black">
           <h1>Education</h1>
-          <TableForm
-            headers={PartCSource.EDU_HEADER_1}
-            rows={PartCSource.EDU_DATA}
-          />
-          <TableForm
-            headers={PartCSource.EDU_HEADER_1}
-            rows={PartCSource.EDU_DATA}
-          />
+          <SubspaceProvider mapState={state => state.CEdu_1} namespace="CEdu_1">
+            <TableForm
+              headers={PartCSource.EDU_HEADER_1}
+              rows={PartCSource.EDU_DATA}
+            />
+          </SubspaceProvider>
+
+          <SubspaceProvider mapState={state => state.CEdu_2} namespace="CEdu_2">
+            <TableForm
+              headers={PartCSource.EDU_HEADER_2}
+              rows={PartCSource.EDU_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
 
         <Segment inverted color="black">
           <h1>
             Foreign work experience – With good official language proficiency
+            (Canadian Language Benchmark Level [CLB] 7 or higher)
           </h1>
-          <TableForm
-            headers={PartCSource.FWE_HEADER_1}
-            rows={PartCSource.FWE_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.CForeignLang_1}
+            namespace="CForeignLang_1"
+          >
+            <TableForm
+              headers={PartCSource.FWE_HEADER_1}
+              rows={PartCSource.FWE_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
 
         <Segment inverted color="black">
           <h1>Foreign work experience – With Canadian work experience</h1>
-          <TableForm
-            headers={PartCSource.FWE_HEADER_2}
-            rows={PartCSource.EDU_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.CForeignLang_2}
+            namespace="CForeignLang_2"
+          >
+            <TableForm
+              headers={PartCSource.FWE_HEADER_2}
+              rows={PartCSource.EDU_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
         <Segment inverted color="black">
-          <TableForm
-            headers={PartCSource.COQ_HEADER}
-            rows={PartCSource.COQ_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.certificate}
+            namespace="certificate"
+          >
+            <TableForm
+              headers={PartCSource.COQ_HEADER}
+              rows={PartCSource.COQ_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { SubspaceProvider } from 'react-redux-subspace';
 import { Segment, Table } from 'semantic-ui-react';
 import TableForm from './common/TableForm';
 import PartBSource from './source/PartBSource';
@@ -39,26 +40,41 @@ class PartB extends Component {
 
         <Segment inverted color="black">
           <h1>Level of Education</h1>
-          <TableForm
-            headers={PartBSource.EDUCATION_HEADER}
-            rows={PartBSource.EDU_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.BwithspouseEdu}
+            namespace="BwithspouseEdu"
+          >
+            <TableForm
+              headers={PartBSource.EDUCATION_HEADER}
+              rows={PartBSource.EDU_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
 
         <Segment inverted color="black">
           <h1>Official languages proficiency - first official language</h1>
-          <TableForm
-            headers={PartBSource.FOL_HEADER}
-            rows={PartBSource.FOL_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.BwithspouseLang}
+            namespace="BwithspouseLang"
+          >
+            <TableForm
+              headers={PartBSource.FOL_HEADER}
+              rows={PartBSource.FOL_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
 
         <Segment inverted color="black">
           <h1>Canadian work experience</h1>
-          <TableForm
-            headers={PartBSource.EXP_HEADER}
-            rows={PartBSource.EXP_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.BwithspouseWork}
+            namespace="BwithspouseWork"
+          >
+            <TableForm
+              headers={PartBSource.EXP_HEADER}
+              rows={PartBSource.EXP_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
       </div>
     );

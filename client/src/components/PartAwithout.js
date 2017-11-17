@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Segment, Table } from 'semantic-ui-react';
+import { SubspaceProvider } from 'react-redux-subspace';
 import DropdownMenu from './common/dropdownMenu';
 import TableForm from './common/TableForm';
 import PartASource from './source/PartASource';
@@ -49,43 +50,68 @@ class PartAwithout extends Component {
 
         <Segment inverted color="black">
           <h1>Age </h1>
-          <DropdownMenu
-            options={PartASource.WITHOUTSPOUSE_AGE_DATA}
-            placeholder="Select Age"
-            value={PartASource.WITHOUTSPOUSE_AGE_DATA.value}
-          />
+          <SubspaceProvider
+            mapState={state => state.withoutspouseAge}
+            namespace="withoutspouseAge"
+          >
+            <DropdownMenu
+              options={PartASource.WITHOUTSPOUSE_AGE_DATA}
+              placeholder="Select Age"
+              value={PartASource.WITHOUTSPOUSE_AGE_DATA.value}
+            />
+          </SubspaceProvider>
         </Segment>
 
         <Segment inverted color="black">
           <h1>Level of Education</h1>
-          <TableForm
-            headers={PartASource.WITHOUTSPOUSE_EDU_HEADER}
-            rows={PartASource.WITHOUTSPOUSE_EDU_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.withoutspouseEdu}
+            namespace="withoutspouseEdu"
+          >
+            <TableForm
+              headers={PartASource.WITHOUTSPOUSE_EDU_HEADER}
+              rows={PartASource.WITHOUTSPOUSE_EDU_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
 
         <Segment inverted color="black">
           <h1>Official languages proficiency - first official language</h1>
-          <TableForm
-            headers={PartASource.WITHOUTSPOUSE_LANG_HEADER}
-            rows={PartASource.WITHOUTSPOUSE_LANG_FIRST_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.withoutspouseLangFirst}
+            namespace="withoutspouseLangFirst"
+          >
+            <TableForm
+              headers={PartASource.WITHOUTSPOUSE_LANG_HEADER}
+              rows={PartASource.WITHOUTSPOUSE_LANG_FIRST_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
 
         <Segment inverted color="black">
           <h1>Official languages proficiency - second official language</h1>
-          <TableForm
-            headers={PartASource.WITHOUTSPOUSE_LANG_HEADER}
-            rows={PartASource.WITHOUTSPOUSE_LANG_SECOND_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.withoutspouseLangSecond}
+            namespace="withoutspouseLangSecond"
+          >
+            <TableForm
+              headers={PartASource.WITHOUTSPOUSE_LANG_HEADER}
+              rows={PartASource.WITHOUTSPOUSE_LANG_SECOND_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
 
         <Segment inverted color="black">
           <h1>Canadian work experience</h1>
-          <TableForm
-            headers={PartASource.WITHOUTSPOUSE_WORK_HEADER}
-            rows={PartASource.WITHOUTSPOUSE_WORK_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.withoutspouseWork}
+            namespace="withoutspouseWork"
+          >
+            <TableForm
+              headers={PartASource.WITHOUTSPOUSE_WORK_HEADER}
+              rows={PartASource.WITHOUTSPOUSE_WORK_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
       </div>
     );

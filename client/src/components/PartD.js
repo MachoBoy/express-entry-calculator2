@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { SubspaceProvider } from 'react-redux-subspace';
 import { Segment, Table } from 'semantic-ui-react';
 import TableForm from './common/TableForm';
 import PartDSource from './source/PartDSource';
@@ -56,10 +57,15 @@ class PartD extends Component {
         </Segment>
 
         <Segment inverted color="black">
-          <TableForm
-            headers={PartDSource.ADDTIONAL_HEADER}
-            rows={PartDSource.ADDITIONAL_DATA}
-          />
+          <SubspaceProvider
+            mapState={state => state.addtional}
+            namespace="addtional"
+          >
+            <TableForm
+              headers={PartDSource.ADDTIONAL_HEADER}
+              rows={PartDSource.ADDITIONAL_DATA}
+            />
+          </SubspaceProvider>
         </Segment>
       </div>
     );
