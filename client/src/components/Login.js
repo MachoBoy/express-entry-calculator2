@@ -41,6 +41,19 @@ class Login extends Component {
     this.props.loginUser({ email, password });
   }
 
+  renderErrorMessage(error) {
+    if (error) {
+      return (
+        <div className="authError">
+          <Message negative>
+            <Icon name="warning circle" />
+            {this.props.error}
+          </Message>
+        </div>
+      );
+    }
+  }
+
   render() {
     if (this.props.user) {
       return (
@@ -54,12 +67,7 @@ class Login extends Component {
     }
     return (
       <div className="login" style={styles.containerStyle}>
-        <div className="authError">
-          <Message negative>
-            <Icon name="warning circle" />
-            {this.props.error}
-          </Message>
-        </div>
+        {this.renderErrorMessage(this.props.error)}
         <Form size="large">
           <Segment stacked>
             <Header as="h2" color="green" textAlign="center">
@@ -71,6 +79,7 @@ class Login extends Component {
               iconPosition="left"
               placeholder="E-mail address"
               onChange={this.onEmailChange.bind(this)}
+              value={this.props.email}
             />
             <Form.Input
               fluid
@@ -79,6 +88,7 @@ class Login extends Component {
               placeholder="Password"
               type="password"
               onChange={this.onPasswordChange.bind(this)}
+              value={this.props.password}
             />
             {this.props.loading ? (
               <Button loading primary fluid size="large">
