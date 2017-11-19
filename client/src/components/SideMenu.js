@@ -8,10 +8,7 @@ import { logoutUser } from '../actions/authAction';
 const MENU_TITLE = [
   { to: '/', title: 'Login' },
   { to: '/about', title: 'About' },
-  { to: '/core', title: 'Core / human capital factors' },
-  { to: '/spouse', title: 'Spouse or common-law partner factors' },
-  { to: '/skill', title: 'Skill transferability factors' },
-  { to: '/additional', title: 'Additional points' }
+  { to: '/form', title: 'CRS' }
 ];
 
 const LOGOUT = { to: '', title: 'Logout', lg: 'lg' };
@@ -73,8 +70,6 @@ class SideMenu extends Component {
   }
 
   render() {
-    console.log(this.props);
-
     return (
       <div className="menu">
         <Menu pointing vertical inverted style={styles.MenuStyle}>

@@ -3,7 +3,7 @@ import { Tab } from 'semantic-ui-react';
 import PartAwith from './PartAwith';
 import PartAwithout from './PartAwithout';
 
-class PartA extends Component {
+class TabMenu extends Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0 };
@@ -55,4 +55,4 @@ const styles = {
   }
 };
 
-export default PartA;
+export default TabMenu;
