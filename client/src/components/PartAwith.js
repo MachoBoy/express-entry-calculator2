@@ -57,10 +57,10 @@ class PartAwith extends Component {
             namespace="withspouseAge"
           >
             <DropdownMenu
-              options={PartASource.WITHSPOUSE_AGE_DATA}
               placeholder="Select Age"
+              options={PartASource.WITHSPOUSE_AGE_DATA}
               value={PartASource.WITHSPOUSE_AGE_DATA.value}
-              onClick={this.props.select}
+              onChange={(e, { value }) => this.props.select(value)}
             />
           </SubspaceProvider>
         </Segment>

@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { namespaced } from 'redux-subspace';
 import tableReducer from './tableReducer';
 import authReducer from './authReducer';
+
 export default combineReducers({
   // core withSpouse reducer
   withspouseAge: namespaced('withSpouseAge')(tableReducer),

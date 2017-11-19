@@ -36,11 +36,13 @@ class Login extends Component {
     this.props.getPassword(data.value);
   }
 
+  //login user
   onSubmit() {
     const { email, password } = this.props;
     this.props.loginUser({ email, password });
   }
 
+  //render error message
   renderErrorMessage(error) {
     if (error) {
       return (
