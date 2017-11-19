@@ -55,8 +55,8 @@ class PartAwithout extends Component {
         <Segment inverted color="black">
           <h1>Age </h1>
           <SubspaceProvider
-            mapState={state => state.withoutspouseAge}
-            namespace="withoutspouseAge"
+            mapState={state => state.AwithoutspouseAge}
+            namespace="AwithoutspouseAge"
           >
             <DropdownMenu
               placeholder="Select Age"
@@ -70,8 +70,8 @@ class PartAwithout extends Component {
         <Segment inverted color="black">
           <h1>Level of Education</h1>
           <SubspaceProvider
-            mapState={state => state.withoutspouseEdu}
-            namespace="withoutspouseEdu"
+            mapState={state => state.AwithoutspouseEdu}
+            namespace="AwithoutspouseEdu"
           >
             <TableForm
               headers={PartASource.WITHOUTSPOUSE_EDU_HEADER}
@@ -83,8 +83,8 @@ class PartAwithout extends Component {
         <Segment inverted color="black">
           <h1>Official languages proficiency - first official language</h1>
           <SubspaceProvider
-            mapState={state => state.withoutspouseLangFirst}
-            namespace="withoutspouseLangFirst"
+            mapState={state => state.AwithoutspouseLangFirst}
+            namespace="AwithoutspouseLangFirst"
           >
             <TableForm
               headers={PartASource.WITHOUTSPOUSE_LANG_HEADER}
@@ -96,8 +96,8 @@ class PartAwithout extends Component {
         <Segment inverted color="black">
           <h1>Official languages proficiency - second official language</h1>
           <SubspaceProvider
-            mapState={state => state.withoutspouseLangSecond}
-            namespace="withoutspouseLangSecond"
+            mapState={state => state.AwithoutspouseLangSecond}
+            namespace="AwithoutspouseLangSecond"
           >
             <TableForm
               headers={PartASource.WITHOUTSPOUSE_LANG_HEADER}
@@ -109,8 +109,8 @@ class PartAwithout extends Component {
         <Segment inverted color="black">
           <h1>Canadian work experience</h1>
           <SubspaceProvider
-            mapState={state => state.withoutspouseWork}
-            namespace="withoutspouseWork"
+            mapState={state => state.AwithoutspouseWork}
+            namespace="AwithoutspouseWork"
           >
             <TableForm
               headers={PartASource.WITHOUTSPOUSE_WORK_HEADER}
@@ -205,8 +205,8 @@ class PartAwithout extends Component {
           <Segment inverted color="black">
             <h1>Education</h1>
             <SubspaceProvider
-              mapState={state => state.CEdu_1}
-              namespace="CEdu_1"
+              mapState={state => state.CwithoutspouseEdu_1}
+              namespace="CwithoutspouseEdu_1"
             >
               <TableForm
                 headers={PartCSource.EDU_HEADER_1}
@@ -215,8 +215,8 @@ class PartAwithout extends Component {
             </SubspaceProvider>
 
             <SubspaceProvider
-              mapState={state => state.CEdu_2}
-              namespace="CEdu_2"
+              mapState={state => state.CwithoutspouseEdu_2}
+              namespace="CwithoutspouseEdu_2"
             >
               <TableForm
                 headers={PartCSource.EDU_HEADER_2}
@@ -231,8 +231,8 @@ class PartAwithout extends Component {
               (Canadian Language Benchmark Level [CLB] 7 or higher)
             </h1>
             <SubspaceProvider
-              mapState={state => state.CForeignLang_1}
-              namespace="CForeignLang_1"
+              mapState={state => state.CwithoutspouseForeignLang_1}
+              namespace="CwithoutspouseForeignLang_1"
             >
               <TableForm
                 headers={PartCSource.FWE_HEADER_1}
@@ -244,8 +244,8 @@ class PartAwithout extends Component {
           <Segment inverted color="black">
             <h1>Foreign work experience – With Canadian work experience</h1>
             <SubspaceProvider
-              mapState={state => state.CForeignLang_2}
-              namespace="CForeignLang_2"
+              mapState={state => state.CwithoutspouseForeignLang_2}
+              namespace="CwithoutspouseForeignLang_2"
             >
               <TableForm
                 headers={PartCSource.FWE_HEADER_2}
@@ -255,8 +255,8 @@ class PartAwithout extends Component {
           </Segment>
           <Segment inverted color="black">
             <SubspaceProvider
-              mapState={state => state.certificate}
-              namespace="certificate"
+              mapState={state => state.CwithoutspouseCertificate}
+              namespace="CwithoutspouseCertificate"
             >
               <TableForm
                 headers={PartCSource.COQ_HEADER}
@@ -316,8 +316,8 @@ class PartAwithout extends Component {
 
           <Segment inverted color="black">
             <SubspaceProvider
-              mapState={state => state.addtional}
-              namespace="addtional"
+              mapState={state => state.DwithoutspouseAdditional}
+              namespace="DwithoutspouseAdditional"
             >
               <TableForm
                 headers={PartDSource.ADDTIONAL_HEADER}

@@ -57,8 +57,8 @@ class PartAwith extends Component {
           <Segment inverted color="black">
             <h1>Age </h1>
             <SubspaceProvider
-              mapState={state => state.withspouseAge}
-              namespace="withspouseAge"
+              mapState={state => state.AwithspouseAge}
+              namespace="AwithspouseAge"
             >
               <DropdownMenu
                 placeholder="Select Age"
@@ -72,8 +72,8 @@ class PartAwith extends Component {
           <Segment inverted color="black">
             <h1>Level of Education</h1>
             <SubspaceProvider
-              mapState={state => state.withspouseEdu}
-              namespace="withspouseEdu"
+              mapState={state => state.AwithspouseEdu}
+              namespace="AwithspouseEdu"
             >
               <TableForm
                 headers={PartASource.WITHSPOUSE_EDU_HEADER}
@@ -85,8 +85,8 @@ class PartAwith extends Component {
           <Segment inverted color="black">
             <h1>Official languages proficiency - first official language</h1>
             <SubspaceProvider
-              mapState={state => state.withspouseLangFirst}
-              namespace="withspouseLangFirst"
+              mapState={state => state.AwithspouseLangFirst}
+              namespace="AwithspouseLangFirst"
             >
               <TableForm
                 headers={PartASource.WITHSPOUSE_LANG_HEADER}
@@ -98,8 +98,8 @@ class PartAwith extends Component {
           <Segment inverted color="black">
             <h1>Official languages proficiency - second official language</h1>
             <SubspaceProvider
-              mapState={state => state.withspouseLangSecond}
-              namespace="withspouseLangSecond"
+              mapState={state => state.AwithspouseLangSecond}
+              namespace="AwithspouseLangSecond"
             >
               <TableForm
                 headers={PartASource.WITHSPOUSE_LANG_HEADER}
@@ -111,8 +111,8 @@ class PartAwith extends Component {
           <Segment inverted color="black">
             <h1>Canadian work experience</h1>
             <SubspaceProvider
-              mapState={state => state.withspouseWork}
-              namespace="withspouseWork"
+              mapState={state => state.AwithspouseWork}
+              namespace="AwithspouseWork"
             >
               <TableForm
                 headers={PartASource.WITHOUTSPOUSE_WORK_HEADER}
@@ -243,10 +243,7 @@ class PartAwith extends Component {
               >
                 <Table.Header>
                   <Table.Row>
-                    <Table.HeaderCell>
-                      {' '}
-                      Foreign work experience{' '}
-                    </Table.HeaderCell>
+                    <Table.HeaderCell>Foreign work experience</Table.HeaderCell>
                     <Table.HeaderCell textAlign="center">
                       Points per factor
                     </Table.HeaderCell>
@@ -305,8 +302,8 @@ class PartAwith extends Component {
             <Segment inverted color="black">
               <h1>Education</h1>
               <SubspaceProvider
-                mapState={state => state.CEdu_1}
-                namespace="CEdu_1"
+                mapState={state => state.CwithspouseEdu_1}
+                namespace="CwithspouseEdu_1"
               >
                 <TableForm
                   headers={PartCSource.EDU_HEADER_1}
@@ -315,8 +312,8 @@ class PartAwith extends Component {
               </SubspaceProvider>
 
               <SubspaceProvider
-                mapState={state => state.CEdu_2}
-                namespace="CEdu_2"
+                mapState={state => state.CwithspouseEdu_2}
+                namespace="CwithspouseEdu_2"
               >
                 <TableForm
                   headers={PartCSource.EDU_HEADER_2}
@@ -332,8 +329,8 @@ class PartAwith extends Component {
                 higher)
               </h1>
               <SubspaceProvider
-                mapState={state => state.CForeignLang_1}
-                namespace="CForeignLang_1"
+                mapState={state => state.CwithspouseForeignLang_1}
+                namespace="CwithspouseForeignLang_1"
               >
                 <TableForm
                   headers={PartCSource.FWE_HEADER_1}
@@ -345,8 +342,8 @@ class PartAwith extends Component {
             <Segment inverted color="black">
               <h1>Foreign work experience – With Canadian work experience</h1>
               <SubspaceProvider
-                mapState={state => state.CForeignLang_2}
-                namespace="CForeignLang_2"
+                mapState={state => state.CwithspouseForeignLang_2}
+                namespace="CwithspouseForeignLang_2"
               >
                 <TableForm
                   headers={PartCSource.FWE_HEADER_2}
@@ -356,8 +353,8 @@ class PartAwith extends Component {
             </Segment>
             <Segment inverted color="black">
               <SubspaceProvider
-                mapState={state => state.certificate}
-                namespace="certificate"
+                mapState={state => state.CwithspouseCertificate}
+                namespace="CwithspouseCertificate"
               >
                 <TableForm
                   headers={PartCSource.COQ_HEADER}
@@ -400,10 +397,7 @@ class PartAwith extends Component {
                     <Table.Cell textAlign="center"> 30 </Table.Cell>
                   </Table.Row>
                   <Table.Row>
-                    <Table.Cell>
-                      {' '}
-                      Post-secondary education in Canada{' '}
-                    </Table.Cell>
+                    <Table.Cell>Post-secondary education in Canada</Table.Cell>
                     <Table.Cell textAlign="center"> 30 </Table.Cell>
                   </Table.Row>
                   <Table.Row>
@@ -420,8 +414,8 @@ class PartAwith extends Component {
 
             <Segment inverted color="black">
               <SubspaceProvider
-                mapState={state => state.addtional}
-                namespace="addtional"
+                mapState={state => state.DwithspouseAdditional}
+                namespace="DwithspouseAdditional"
               >
                 <TableForm
                   headers={PartDSource.ADDTIONAL_HEADER}

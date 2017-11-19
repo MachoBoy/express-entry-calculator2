@@ -99,30 +99,39 @@ const mapStateToProps = state => {
   return {
     user: state.auth.user,
     loading: state.auth.loading,
-    // core withSpouse states
-    withSpouseAgePoint: state.withspouseAge,
-    withSpouseEduPoint: state.withspouseEdu,
-    withSpouseLangPoint: state.withspouseLangFirst,
-    withSpouseLang2Point: state.withspouseLangSecond,
-    withSpouseWorkPoint: state.withspouseWork,
-    // core withoutSpouse
-    withoutSpouseAgePoint: state.withoutspouseAge,
-    withoutSpouseEduPoint: state.withoutspouseEdu,
-    withoutSpouseLangPoint: state.withoutspouseLangFirst,
-    withoutSpouseLang2Point: state.withoutspouseLangSecond,
-    withoutSpouseWorkPoint: state.withoutspouseWork,
-    // Spouse factor
+    // withspouse A
+    withSpouseAgePoint: state.AwithspouseAge,
+    withSpouseEduPoint: state.AwithspouseEdu,
+    withSpouseLangPoint_1: state.AwithspouseLangFirst,
+    withSpouseLangPoint_2: state.AwithspouseLangSecond,
+    withSpouseWorkPoint: state.AwithspouseWork,
+    // withspouse B
     BwithSpouseEduPoint: state.BwithspouseEdu,
     BwithSpouseLangPoint: state.BwithspouseLang,
     BwithSpouseWorkPoint: state.BwithspouseWork,
-    // skill transferability factors
-    CEdu_1Point: state.CEdu_1,
-    CEdu_2Point: state.CEdu_2,
-    CForeignLang_1Point: state.CForeignLang_1,
-    CForeignLang_2Point: state.CForeignLang_2,
-    certificatePoint: state.certificate,
-    // Additional
-    additionalPoint: state.additional
+    // withspouse C
+    CwithspouseEduPoint_1: state.CwithspouseEdu_1,
+    CwithspouseEduPoint_2: state.CwithspouseEdu_2,
+    CwithspouseForeignLangPoint_1: state.CwithspouseForeignLang_1,
+    CwithspouseForeignLangPoint_2: state.CwithspouseForeignLang_2,
+    CwithspouseCertificatePoint: state.CwithspouseCertificate,
+    // withspouse D
+    DwithspouseAdditionalPoint: state.DwithspouseAdditional,
+
+    // withoutspouse A
+    withoutSpouseAgePoint: state.AwithoutspouseAge,
+    withoutSpouseEduPoint: state.AwithoutspouseEdu,
+    withoutSpouseLangPoint: state.AwithoutspouseLangFirst,
+    withoutSpouseLang2Point: state.AwithoutspouseLangSecond,
+    withoutSpouseWorkPoint: state.AwithoutspouseWork,
+    // withspouse C
+    CwithoutspouseEduPoint_1: state.CwithoutspouseEdu_1,
+    CwithoutspouseEduPoint_2: state.CwithoutspouseEdu_2,
+    CwithoutspouseForeignLangPoint_1: state.CwithoutspouseForeignLang_1,
+    CwithoutspouseForeignLangPoint_2: state.CwithoutspouseForeignLang_2,
+    CwithoutspouseCertificatePoint: state.CwithoutspouseCertificate,
+    // withspouse D
+    DwithoutspouseAdditionalPoint: state.DwithoutspouseAdditional
   };
 };
 
