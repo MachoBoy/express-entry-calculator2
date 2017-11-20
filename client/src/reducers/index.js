@@ -51,5 +51,6 @@ export default combineReducers({
   DwithoutspouseAdditional: namespaced('DwithoutspouseAdditional')(
     tableReducer
   ),
+  tab: tableReducer,
   auth: authReducer
 });

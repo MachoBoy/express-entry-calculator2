@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Tab } from 'semantic-ui-react';
 import PartAwith from './PartAwith';
 import PartAwithout from './PartAwithout';
+import { select } from '../actions';
 
 class TabMenu extends Component {
   constructor(props) {
@@ -12,6 +14,7 @@ class TabMenu extends Component {
 
   handleTabChange = (e, { activeIndex }) => {
     this.setState({ activeIndex });
+    this.props.select(activeIndex);
   };
 
   render() {
@@ -55,4 +58,4 @@ const styles = {
   }
 };
 
-export default TabMenu;
+export default connect(null, { select })(TabMenu);

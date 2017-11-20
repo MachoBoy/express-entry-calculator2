@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Menu, Icon, Loader, Dimmer } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { logoutUser } from '../actions/authAction';
+import PointsIndicator from './common/pointIndicator';
 
 const MENU_TITLE = [
   { to: '/', title: 'Login' },
@@ -70,9 +71,76 @@ class SideMenu extends Component {
   }
 
   render() {
+    const {
+      withSpouseAgePoint,
+      withSpouseEduPoint,
+      withSpouseLangPoint_1,
+      withSpouseLangPoint_2,
+      withSpouseWorkPoint,
+      BwithSpouseEduPoint,
+      BwithSpouseWorkPoint,
+      CwithspouseEduPoint_1,
+      CwithspouseEduPoint_2,
+      CwithspouseForeignLangPoint_1,
+      CwithspouseForeignLangPoint_2,
+      CwithspouseCertificatePoint,
+      DwithspouseAdditionalPoint,
+
+      // withoutspouse
+      withoutSpouseAgePoint,
+      withoutSpouseEduPoint,
+      withoutSpouseLangPoint,
+      withoutSpouseLang2Point,
+      withoutSpouseWorkPoint,
+      CwithoutspouseEduPoint_1,
+      CwithoutspouseEduPoint_2,
+      CwithoutspouseForeignLangPoint_1,
+      CwithoutspouseForeignLangPoint_2,
+      CwithoutspouseCertificatePoint,
+      DwithoutspouseAdditionalPoint
+    } = this.props;
+
+    const withSpousePointsArray = [
+      withSpouseAgePoint,
+      withSpouseEduPoint,
+      withSpouseLangPoint_1,
+      withSpouseLangPoint_2,
+      withSpouseWorkPoint,
+      BwithSpouseEduPoint,
+      BwithSpouseWorkPoint,
+      CwithspouseEduPoint_1,
+      CwithspouseEduPoint_2,
+      CwithspouseForeignLangPoint_1,
+      CwithspouseForeignLangPoint_2,
+      CwithspouseCertificatePoint,
+      DwithspouseAdditionalPoint
+    ];
+
+    const withoutSpousePointsArray = [
+      withoutSpouseAgePoint,
+      withoutSpouseEduPoint,
+      withoutSpouseLangPoint,
+      withoutSpouseLang2Point,
+      withoutSpouseWorkPoint,
+      CwithoutspouseEduPoint_1,
+      CwithoutspouseEduPoint_2,
+      CwithoutspouseForeignLangPoint_1,
+      CwithoutspouseForeignLangPoint_2,
+      CwithoutspouseCertificatePoint,
+      DwithoutspouseAdditionalPoint
+    ];
+
+    const withoutSpouseTotal = withoutSpousePointsArray
+      .map(points => points.point)
+      .reduce((acc, curr) => acc + parseInt(curr, 10), 0);
+
+    const withSpouseTotal = withSpousePointsArray
+      .map(points => points.point)
+      .reduce((acc, curr) => acc + parseInt(curr, 10), 0);
+
     return (
       <div className="menu">
-        <Menu pointing vertical inverted style={styles.MenuStyle}>
+        <Menu pointing vertical inverted style={styles.menuStyle}>
           <Menu.Item header style={{ marginBottom: '50px' }}>
             Express Entry Calculator
             <Icon name="calculator" size={'huge'} color={'green'} />
@@ -80,6 +148,21 @@ class SideMenu extends Component {
           <Menu.Item key="123242" />
 
           {this.renderMenu()}
+          <div className="pointsIndicator" style={styles.pointStyle}>
+            {this.props.tab === 1 ? (
+              <PointsIndicator
+                color="green"
+                value={withSpouseTotal}
+                label="Points"
+              />
+            ) : (
+              <PointsIndicator
+                color="orange"
+                value={withoutSpouseTotal}
+                label="Points"
+              />
+            )}
+          </div>
         </Menu>
       </div>
     );
@@ -87,11 +170,15 @@ class SideMenu extends Component {
 }
 
 const styles = {
-  MenuStyle: {
+  menuStyle: {
     position: 'fixed',
     top: '0',
     bottom: '0',
     width: '270px'
+  },
+  pointStyle: {
+    marginTop: '20px',
+    marginLeft: '95px'
   }
 };
 
@@ -99,6 +186,7 @@ const mapStateToProps = state => {
   return {
     user: state.auth.user,
     loading: state.auth.loading,
+    tab: state.tab.point,
     // withspouse A
     withSpouseAgePoint: state.AwithspouseAge,
     withSpouseEduPoint: state.AwithspouseEdu,
