@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Segment, Table } from 'semantic-ui-react';
 import { SubspaceProvider } from 'react-redux-subspace';
 import DropdownMenu from './common/dropdownMenu';
@@ -8,7 +7,6 @@ import PartASource from './source/PartASource';
 import PartBSource from './source/PartBSource';
 import PartCSource from './source/PartCSource';
 import PartDSource from './source/PartDSource';
-import { select } from '../actions';
 
 class PartAwith extends Component {
   render() {
@@ -60,11 +58,9 @@ class PartAwith extends Component {
               mapState={state => state.AwithspouseAge}
               namespace="AwithspouseAge"
             >
-              <DropdownMenu
-                placeholder="Select Age"
-                options={PartASource.WITHSPOUSE_AGE_DATA}
-                value={PartASource.WITHSPOUSE_AGE_DATA.value}
-                onChange={(e, { value }) => this.props.select(value)}
+              <TableForm
+                headers={PartASource.WITHSPOUSE_AGE_HEADER}
+                rows={PartASource.WITHSPOUSE_AGE_DATA}
               />
             </SubspaceProvider>
           </Segment>
@@ -430,4 +426,4 @@ class PartAwith extends Component {
   }
 }
 
-export default connect(null, { select })(PartAwith);
+export default PartAwith;

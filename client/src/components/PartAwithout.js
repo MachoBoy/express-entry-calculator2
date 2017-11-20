@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Segment, Table } from 'semantic-ui-react';
 import { SubspaceProvider } from 'react-redux-subspace';
 import DropdownMenu from './common/dropdownMenu';
@@ -7,7 +6,6 @@ import TableForm from './common/TableForm';
 import PartASource from './source/PartASource';
 import PartCSource from './source/PartCSource';
 import PartDSource from './source/PartDSource';
-import { select } from '../actions';
 
 class PartAwithout extends Component {
   render() {
@@ -58,11 +56,9 @@ class PartAwithout extends Component {
             mapState={state => state.AwithoutspouseAge}
             namespace="AwithoutspouseAge"
           >
-            <DropdownMenu
-              placeholder="Select Age"
-              options={PartASource.WITHOUTSPOUSE_AGE_DATA}
-              value={PartASource.WITHOUTSPOUSE_AGE_DATA.value}
-              onChange={(e, { value }) => this.props.select(value)}
+            <TableForm
+              headers={PartASource.WITHOUTSPOUSE_AGE_HEADER}
+              rows={PartASource.WITHOUTSPOUSE_AGE_DATA}
             />
           </SubspaceProvider>
         </Segment>
@@ -331,4 +327,4 @@ class PartAwithout extends Component {
   }
 }
 
-export default connect(null, { select })(PartAwithout);
+export default PartAwithout;
