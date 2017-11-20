@@ -32,8 +32,8 @@ const PartCSource = {
   EDU_DATA: [
     {
       text: 'Secondary school (high school) credential or less',
-      value: 0,
-      value2: 0
+      value: '0',
+      value2: '0'
     },
     {
       text: 'Post-secondary program credential of one year or longer',
@@ -49,7 +49,7 @@ const PartCSource = {
   ],
 
   FWE_DATA: [
-    { text: 'No foreign work experience', value: 0, value2: 0 },
+    { text: 'No foreign work experience', value: '0', value2: '0' },
     {
       text: '1 or 2 years of foreign work experience',
       value: 13,

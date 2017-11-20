@@ -15,7 +15,7 @@ const PartBSource = {
   ],
 
   EDU_DATA: [
-    { text: 'Less than secondary school (high school)', value: 0 },
+    { text: 'Less than secondary school (high school)', value: '0' },
     { text: 'Secondary diploma (high school graduation)', value: 2 },
     {
       text:
@@ -46,14 +46,14 @@ const PartBSource = {
   ],
 
   FOL_DATA: [
-    { text: 'CLB 4 or less', value: 0 },
+    { text: 'CLB 4 or less', value: '0' },
     { text: 'CLB 5 or 6', value: 1 },
     { text: 'CLB 7 or 8', value: 3 },
     { text: 'CLB 9 or more', value: 5 }
   ],
 
   EXP_DATA: [
-    { text: 'None or less than a year', value: 0 },
+    { text: 'None or less than a year', value: '0' },
     { text: '1 year', value: 5 },
     { text: '2 year', value: 7 },
     { text: '3 year', value: 8 },
